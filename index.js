@@ -1,13 +1,12 @@
 // TODO: Include packages needed for this application
-const generateReadMe = (projectName, githubName) => {
+const fs = require('fs');
+const inquirer = require('inquirer');
+const generateMarkdown = (projectName, githubName) => {
     return `
         Project: ${projectName}
         GitHub: ${githubName}
     `;
 };
-console.log(generateReadMe('esco', 'escowin'));
-
-
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -21,7 +20,18 @@ const questions = [
 console.log(questions);
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+    return new Promise((resolve, reject) => {
+        if(err) {
+            reject(err);
+            return;
+        }
+        resolve({
+            ok: true,
+            message: 'readme generated.'
+        });
+    });
+}
 
 // TODO: Create a function to initialize app
 function init() {}
