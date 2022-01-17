@@ -13,8 +13,8 @@ const questions = [
     'license:',
     'badges:',
     'features:',
-    'contributors:',
-    'github username:'
+    'github username:',
+    'contributors:'
 ]
 console.log(questions);
 
@@ -36,6 +36,12 @@ function writeToFile(fileName, data) {
 
 // TODO: Create a function to initialize app
 function init() {
+    console.log(`
+    =================
+    Add a New Project
+    =================
+    `);
+
     return inquirer.prompt([
         {
             type: 'input',
@@ -52,10 +58,10 @@ function init() {
         },
         {
             type: 'input',
-            name: 'title',
+            name: 'description',
             message: questions[1],
-            validate: title => {
-                if(title) {
+            validate: description => {
+                if(description) {
                     return true;
                 } else {
                     console.log('enter project description.');
@@ -65,39 +71,91 @@ function init() {
         },
         {
             type: 'input',
-            name: 'title',
+            name: 'installation',
             message: questions[2],
-            validate: title => {
-                if(title) {
+            validate: installation => {
+                if(installation) {
                     return true;
                 } else {
-                    console.log('enter project name.');
+                    console.log('enter installation instructions.');
                     return false;
                 }
             }
         },
         {
             type: 'input',
-            name: 'title',
+            name: 'credits',
             message: questions[3],
-            validate: title => {
-                if(title) {
+            validate: usage => {
+                if(usage) {
                     return true;
                 } else {
-                    console.log('enter project name.');
+                    console.log('enter usage information.');
                     return false;
                 }
             }
         },
         {
             type: 'input',
-            name: 'title',
+            name: 'license',
             message: questions[4],
-            validate: title => {
-                if(title) {
+            validate: license => {
+                if(license) {
                     return true;
                 } else {
-                    console.log('enter project name.');
+                    console.log('enter project license.');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'badges',
+            message: questions[5],
+            validate: badges => {
+                if(badges) {
+                    return true;
+                } else {
+                    console.log('enter badges.');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'features',
+            message: questions[6],
+            validate: features => {
+                if(features) {
+                    return true;
+                } else {
+                    console.log('enter project features.');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'username',
+            message: questions[7],
+            validate: username => {
+                if(username) {
+                    return true;
+                } else {
+                    console.log('enter github username.');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'contributors',
+            message: questions[8],
+            validate: contributors => {
+                if(contributors) {
+                    return true;
+                } else {
+                    console.log('enter github contributors.');
                     return false;
                 }
             }
