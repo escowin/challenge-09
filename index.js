@@ -28,16 +28,21 @@ const questions = [
 
     },
     {
-        //  2021 Top Open Source Licences
-        type: 'list',
-        name: 'license',
-        message: ['MIT', 'Apache 2.0', 'GPL 3.0', 'GPL 2.0', 'LGPL 2.1', 'BSD 3', 'Microsoft Public', 'BSD 2', 'Eclipse 1.0', 'N/A']
-    },
-    {
         type: 'input',
         name: 'installation',
         message: 'enter project installation instructions'
 
+    },
+    {
+        type: 'input',
+        name: 'credits',
+        message: '(if applicable) enter project collaborators'
+    },
+    {
+        //  2021 Top Open Source Licences
+        type: 'list',
+        name: 'license',
+        message: ['MIT', 'Apache 2.0', 'GPL 3.0', 'GPL 2.0', 'LGPL 2.1', 'BSD 3', 'Microsoft Public', 'BSD 2', 'Eclipse 1.0', 'N/A']
     },
     {
         type: 'input',
