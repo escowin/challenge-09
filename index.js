@@ -60,7 +60,6 @@ const questions = [
         message: 'enter test instructions'
     }
 ]
-console.log(questions);
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
