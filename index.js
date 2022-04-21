@@ -60,23 +60,24 @@ const questions = [
         message: 'enter test instructions'
     }
 ]
-console.log(questions);
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {
-    return new Promise((resolve, reject) => {
-        fs.writeFile(`./${fileName}.md`, data, err => {
-            if(err) {
-                reject(err);
-                return;
-            }
-            resolve({
-                ok: true,
-                message: 'readme generated.'
-            });            
-        });
-    });
-}
+// function writeToFile(fileName, data) {
+// }
+// const writeFile = fileContent => {
+//     return new Promise((resolve, reject) => {
+//         fs.writeFile(`./${fileName}.md`, data, err => {
+//             if(err) {
+//                 reject(err);
+//                 return;
+//             }
+//             resolve({
+//                 ok: true,
+//                 message: 'readme generated.'
+//             });            
+//         });
+//     });
+// }
 
 // TODO: Create a function to initialize app
 function init() {
