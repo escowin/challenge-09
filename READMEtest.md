@@ -1,7 +1,7 @@
 
   # d
-  Repo | https://github.com/d/d
-  https://img.shields.io/badge/license-MIT-blue.svg)
+  * | Repo | https://github.com/d/d
+  * [License](https://img.shields.io/badge/license-MIT-blue.svg)
 
   ## DESCRIPTION
   d
@@ -26,6 +26,7 @@
   d
   ## LICENSE
     This application is covered under MIT.
+    
   ## CONTRIBUTING
   d
 
@@ -33,5 +34,5 @@
   d
 
   ## QUESTIONS (CONTACT)
-  * E-mail | d
-  * GitHub | https://github.com/d
+  * | E-mail  | sddsfsd
+  * | REPO  | [GitHub](https://github.com/d)

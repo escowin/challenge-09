@@ -4,7 +4,7 @@ function renderLicenseBadge(license) {
     // streamline if statement: 
     // if license DOES NOT equal N/A, link is returned. Licenses follow a similar BASE + license + COLOR.svg naming convention.
   if (license !== 'N/A') {
-    return `https://img.shields.io/badge/license-${license}-blue.svg)`;
+    return `* [License](https://img.shields.io/badge/license-${license}-blue.svg)`;
   }
   // 
   return '';
@@ -24,7 +24,8 @@ function renderLicenseLink(license) {
 function renderLicenseSection(license) {
   if (license !== 'N/A') {
     return `## LICENSE
-    This application is covered under ${license}.`;
+    This application is covered under ${license}.
+    `;
   }
   return '';
 }
@@ -34,7 +35,7 @@ function generateMarkdown(data) {
   // MARKDOWN FORMAT
   return `
   # ${data.title}
-  Repo | https://github.com/${data.username}/${data.title}
+  * | Repo | https://github.com/${data.username}/${data.title}
   ${renderLicenseBadge(data.license)}
 
   ## DESCRIPTION
@@ -56,6 +57,7 @@ function generateMarkdown(data) {
 
   ## USAGE
   ${data.usage}
+  
   ${renderLicenseSection(data.license)}
   ## CONTRIBUTING
   ${data.contributing}
@@ -64,8 +66,8 @@ function generateMarkdown(data) {
   ${data.test}
 
   ## QUESTIONS (CONTACT)
-  * E-mail | ${data.email}
-  * GitHub | https://github.com/${data.username}
+  * | E-mail  | ${data.email}
+  * | REPO  | [GitHub](https://github.com/${data.username})
 `;
 }
 
