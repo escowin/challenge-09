@@ -3,10 +3,7 @@ const fs = require('fs');
 const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown');
 
-// QUESTIONS ARRAY | 
-
-
-
+// QUESTIONS ARRAY | tbd question validation
 const questions = [
     {
         type: 'input',
@@ -23,7 +20,6 @@ const questions = [
         type: 'input',
         name: 'title',
         message: 'enter project title'
-
     },
     {
         type: 'input',
@@ -35,7 +31,7 @@ const questions = [
         //  2021 Top Open Source Licences
         type: 'list',
         name: 'license',
-        message: ['MIT', 'Apache 2.0', 'GPL 3.0', 'GPL 2.0', 'LGPL 2.1', 'BSD 3', 'Microsoft Public', 'BSD 2', 'Eclipse 1.0', 'None']
+        message: ['MIT', 'Apache 2.0', 'GPL 3.0', 'GPL 2.0', 'LGPL 2.1', 'BSD 3', 'Microsoft Public', 'BSD 2', 'Eclipse 1.0', 'N/A']
     },
     {
         type: 'input',
