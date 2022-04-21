@@ -3,18 +3,61 @@ const fs = require('fs');
 const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown');
 
-// TODO: Create an array of questions for user input
+// QUESTIONS ARRAY | 
+
+
+
 const questions = [
-    'title:',
-    'description:',
-    'installation:',
-    'usage:',
-    'credits:',
-    'license:',
-    'badges:',
-    'features:',
-    'github username:',
-    'contributors:'
+    {
+        type: 'input',
+        name: 'github',
+        message: 'enter github username'
+
+    },
+    {
+        type: 'input',
+        name: 'email',
+        message: 'enter email address'
+    },
+    {
+        type: 'input',
+        name: 'title',
+        message: 'enter project title'
+
+    },
+    {
+        type: 'input',
+        name: 'description',
+        message: 'enter project description'
+
+    },
+    {
+        //  2021 Top Open Source Licences
+        type: 'list',
+        name: 'license',
+        message: ['MIT', 'Apache 2.0', 'GPL 3.0', 'GPL 2.0', 'LGPL 2.1', 'BSD 3', 'Microsoft Public', 'BSD 2', 'Eclipse 1.0', 'None']
+    },
+    {
+        type: 'input',
+        name: 'installation',
+        message: 'enter project installation instructions'
+
+    },
+    {
+        type: 'input',
+        name: 'usage',
+        message: 'enter usage information'
+    },
+    {
+        type: 'input',
+        name: 'contributing',
+        message: 'enter future contributions guidelines'
+    },
+    {
+        type: 'input',
+        name: 'test',
+        message: 'enter test instructions'
+    }
 ]
 console.log(questions);
 
