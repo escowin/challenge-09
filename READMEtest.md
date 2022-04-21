@@ -1,18 +1,16 @@
 
-  # f
-  * | Repo | https://github.com/f/f
-  * [License](https://img.shields.io/badge/license-MIT-blue.svg)
+  # README-GENERATOR
+  * | Repo | https://github.com/escowin/README-GENERATOR
+  
 
   ## DESCRIPTION
-  f
+  generates readmes
   
   ## TABLE OF CONTENTS
   * [Installation](#INSTALLATION)
 
   * [Usage](#USAGE)
   
-  * [License](#LICENSE)
-
   * [Contributing](#CONTRIBUTING)
 
   * [Tests](#TESTS)
@@ -20,20 +18,18 @@
   * [Questions](#QUESTIONS)
   
   ## INSTALLATION
-  f
+  CLI | clone repo, npm i
 
   ## USAGE
-  f
+  clone & use
 
-  ## LICENSE
-  This application is covered under MIT.
-    
+  
   ## CONTRIBUTING
-  f
+  clone & mod to needs
 
   ## TESTS
-  f
+  CLI | node index runs readme-generator
 
   ## QUESTIONS (CONTACT)
-  * | E-mail  | f
-  * | REPO  | [GitHub](https://github.com/f)
+  * edwin@escowinart.com
+  * | REPO  | [GitHub](https://github.com/escowin)
