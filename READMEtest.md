@@ -1,10 +1,10 @@
 
-  # README-GENERATOR
-  * | Repo | https://github.com/escowin/README-GENERATOR
+  # Team Profile Generator
+  * | Repo | https://github.com/escowin/Team Profile Generator
   
 
   ## DESCRIPTION
-  generates readmes
+  Generating team profiles
   
   ## TABLE OF CONTENTS
   * [Installation](#INSTALLATION)
@@ -18,17 +18,17 @@
   * [Questions](#QUESTIONS)
   
   ## INSTALLATION
-  CLI | clone repo, npm i
+  npm i (inquierer required)
 
   ## USAGE
-  clone & use
+  
 
   
   ## CONTRIBUTING
-  clone & mod to needs
+  
 
   ## TESTS
-  CLI | node index runs readme-generator
+  node index opens a cli prompt. page is generated based off answers
 
   ## QUESTIONS (CONTACT)
   * edwin@escowinart.com
