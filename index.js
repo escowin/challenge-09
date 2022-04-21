@@ -8,8 +8,15 @@ const questions = [
     {
         type: 'input',
         name: 'github',
-        message: 'enter github username'
-
+        message: 'enter github username',
+        validate: nameInput => {
+            if (nameInput) {
+              return true;
+            } else {
+              console.log('enter username');
+              return false;
+            }
+          }
     },
     {
         type: 'input',
@@ -19,19 +26,33 @@ const questions = [
     {
         type: 'input',
         name: 'title',
-        message: 'enter project title'
+        message: 'enter project title',
+        validate: nameInput => {
+            if (nameInput) {
+              return true;
+            } else {
+              console.log('enter project title');
+              return false;
+            }
+          }
     },
     {
         type: 'input',
         name: 'description',
-        message: 'enter project description'
-
+        message: 'enter project description',
+        validate: nameInput => {
+            if (nameInput) {
+              return true;
+            } else {
+              console.log('enter description');
+              return false;
+            }
+          }
     },
     {
         type: 'input',
         name: 'installation',
         message: 'enter project installation instructions'
-
     },
     {
         type: 'input',
@@ -39,7 +60,6 @@ const questions = [
         message: 'enter project collaborators (if applicable) '
     },
     {
-        //  2021 Top Open Source Licences
         type: 'list',
         name: 'license',
         message: ['MIT', 'Apache 2.0', 'GPL 3.0', 'GPL 2.0', 'LGPL 2.1', 'BSD 3', 'Microsoft Public', 'BSD 2', 'Eclipse 1.0', 'N/A']
@@ -82,7 +102,7 @@ const questions = [
 // TODO: Create a function to initialize app
 function init() {
     console.log(`functional`);
-    inquirer.prompt(questions);
+    inquirer.prompt(questions).then();
 }
 
 // Function call to initialize app
