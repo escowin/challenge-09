@@ -8,7 +8,7 @@ const questions = [
     // USER-BASED
     {
         type: 'input',
-        name: 'github',
+        name: 'username',
         message: 'enter github username',
         validate: nameInput => {
             if (nameInput) {
@@ -85,7 +85,7 @@ const questions = [
     {
         type: 'input',
         name: 'contributing',
-        message: 'enter future contributions guidelines'
+        message: 'enter contributing guidelines'
     },
     {
         type: 'input',
