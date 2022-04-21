@@ -1,10 +1,10 @@
 
-  # d
-  * | Repo | https://github.com/d/d
+  # f
+  * | Repo | https://github.com/f/f
   * [License](https://img.shields.io/badge/license-MIT-blue.svg)
 
   ## DESCRIPTION
-  d
+  f
   
   ## TABLE OF CONTENTS
   * [Installation](#INSTALLATION)
@@ -20,19 +20,20 @@
   * [Questions](#QUESTIONS)
   
   ## INSTALLATION
-  d
+  f
 
   ## USAGE
-  d
+  f
+
   ## LICENSE
-    This application is covered under MIT.
+  This application is covered under MIT.
     
   ## CONTRIBUTING
-  d
+  f
 
   ## TESTS
-  d
+  f
 
   ## QUESTIONS (CONTACT)
-  * | E-mail  | sddsfsd
-  * | REPO  | [GitHub](https://github.com/d)
+  * | E-mail  | f
+  * | REPO  | [GitHub](https://github.com/f)

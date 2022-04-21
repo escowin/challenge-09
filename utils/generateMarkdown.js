@@ -24,7 +24,7 @@ function renderLicenseLink(license) {
 function renderLicenseSection(license) {
   if (license !== 'N/A') {
     return `## LICENSE
-    This application is covered under ${license}.
+  This application is covered under ${license}.
     `;
   }
   return '';
@@ -57,7 +57,7 @@ function generateMarkdown(data) {
 
   ## USAGE
   ${data.usage}
-  
+
   ${renderLicenseSection(data.license)}
   ## CONTRIBUTING
   ${data.contributing}
@@ -66,7 +66,7 @@ function generateMarkdown(data) {
   ${data.test}
 
   ## QUESTIONS (CONTACT)
-  * | E-mail  | ${data.email}
+  * ${data.email}
   * | REPO  | [GitHub](https://github.com/${data.username})
 `;
 }
