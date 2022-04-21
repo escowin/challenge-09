@@ -3,8 +3,9 @@ const fs = require('fs');
 const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown');
 
-// QUESTIONS ARRAY | tbd question validation
+// QUESTIONS ARRAY
 const questions = [
+    // USER-BASED
     {
         type: 'input',
         name: 'github',
@@ -21,8 +22,18 @@ const questions = [
     {
         type: 'input',
         name: 'email',
-        message: 'enter email address'
+        message: 'enter email address',
+        validate: nameInput => {
+            if (nameInput) {
+              return true;
+            } else {
+              console.log('enter email');
+              return false;
+            }
+          }
     },
+
+    // PROJECT-BASED
     {
         type: 'input',
         name: 'title',
@@ -60,10 +71,12 @@ const questions = [
         message: 'enter project collaborators (if applicable) '
     },
     {
+        // 2021 TOP LICENSES
         type: 'list',
         name: 'license',
-        choices: ['MIT', 'Apache 2.0', 'GPL 3.0', 'GPL 2.0', 'LGPL 2.1', 'BSD 3', 'Microsoft Public', 'BSD 2', 'Eclipse 1.0', 'N/A']
+        choices: ['MIT', 'Apache 2.0', 'GPL 3.0', 'GPL 2.0', 'LGPL 2.1', 'BSD 3', 'BSD 2', 'Microsoft Public', 'Eclipse 1.0', 'N/A']
     },
+
     {
         type: 'input',
         name: 'usage',
@@ -82,8 +95,9 @@ const questions = [
 ]
 
 // TODO: Create a function to write README file
-// function writeToFile(fileName, data) {
-// }
+function writeToFile(fileName, data) {
+}
+
 // const writeFile = fileContent => {
 //     return new Promise((resolve, reject) => {
 //         fs.writeFile(`./${fileName}.md`, data, err => {
@@ -101,7 +115,6 @@ const questions = [
 
 // TODO: Create a function to initialize app
 function init() {
-    console.log(`functional`);
     inquirer.prompt(questions).then();
 }
 
