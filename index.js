@@ -36,7 +36,7 @@ const questions = [
     {
         type: 'input',
         name: 'credits',
-        message: '(if applicable) enter project collaborators'
+        message: 'enter project collaborators (if applicable) '
     },
     {
         //  2021 Top Open Source Licences
@@ -60,6 +60,7 @@ const questions = [
         message: 'enter test instructions'
     }
 ]
+console.log(questions);
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
