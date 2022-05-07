@@ -6,7 +6,6 @@ function renderLicenseBadge(license) {
   if (license !== 'N/A') {
     return `* [License](https://img.shields.io/badge/license-${license}-blue.svg)`;
   }
-  // 
   return '';
 }
 
@@ -33,41 +32,48 @@ function renderLicenseSection(license) {
 // Function generates markdown for README
 function generateMarkdown(data) {
   // MARKDOWN FORMAT
-  return `
-  # ${data.title}
-  * | Repo | https://github.com/${data.username}/${data.title}
+  return `# ${data.title}
+  * [Repo](https://github.com/${data.username}/${data.title})
+  * [Live URL](${data.liveurl})
   ${renderLicenseBadge(data.license)}
 
-  ## DESCRIPTION
+  ## Description
   ${data.description}
   
   ## TABLE OF CONTENTS
-  * [Installation](#INSTALLATION)
+  * [Installation](#installation)
 
-  * [Usage](#USAGE)
+  * [Usage](#usage)
   ${renderLicenseLink(data.license)}
-  * [Contributing](#CONTRIBUTING)
+  * [Contributing](#contributing)
 
-  * [Tests](#TESTS)
+  * [Tests](#tests)
 
-  * [Questions](#QUESTIONS)
+  * [Author](#author)
   
   ## INSTALLATION
-  ${data.installation}
+
+  Run the following to install dependencies
+
+    ${data.installation}
 
   ## USAGE
   ${data.usage}
-
   ${renderLicenseSection(data.license)}
+
   ## CONTRIBUTING
   ${data.contributing}
 
   ## TESTS
-  ${data.test}
+  
+  Enter the following command to run tests
+  
+    ${data.test}
 
-  ## QUESTIONS (CONTACT)
-  * ${data.email}
-  * | REPO  | [GitHub](https://github.com/${data.username})
+  ## Author
+  ${data.name}
+  * [Email](mailto:${data.email})
+  * [GitHub](https://github.com/${data.username})
 `;
 }
 

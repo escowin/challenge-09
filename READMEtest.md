@@ -1,35 +1,42 @@
-
-  # Team Profile Generator
-  * | Repo | https://github.com/escowin/Team Profile Generator
+# horiseon
+  * [Repo](https://github.com/escowin/horiseon)
+  * [Live URL](https://escowin.github.io/horiseon/)
   
 
-  ## DESCRIPTION
-  Generating team profiles
+  ## Description
+  code refactor
   
   ## TABLE OF CONTENTS
-  * [Installation](#INSTALLATION)
+  * [Installation](#installation)
 
-  * [Usage](#USAGE)
+  * [Usage](#usage)
   
-  * [Contributing](#CONTRIBUTING)
+  * [Contributing](#contributing)
 
-  * [Tests](#TESTS)
+  * [Tests](#tests)
 
-  * [Questions](#QUESTIONS)
+  * [Author](#author)
   
   ## INSTALLATION
-  npm i (inquierer required)
+
+  Run the following to install dependencies
+
+    
 
   ## USAGE
   
-
   
+
   ## CONTRIBUTING
   
 
   ## TESTS
-  node index opens a cli prompt. page is generated based off answers
+  
+  Enter the following command to run tests
+  
+    
 
-  ## QUESTIONS (CONTACT)
-  * edwin@escowinart.com
-  * | REPO  | [GitHub](https://github.com/escowin)
+  ## Author
+  Edwin Escobar
+  * [Email](mailto:edwin@escowinart.com)
+  * [GitHub](https://github.com/escowin)

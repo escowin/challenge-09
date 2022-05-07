@@ -7,6 +7,11 @@ const generateMarkdown = require('./utils/generateMarkdown');
 const questions = [
     // USER-BASED
     {
+      type: 'input',
+      name: 'name',
+      message: 'enter name',
+    },
+    {
         type: 'input',
         name: 'username',
         message: 'enter github username',
@@ -48,6 +53,11 @@ const questions = [
           }
     },
     {
+      type: 'input',
+      name: 'liveurl',
+      message: 'enter live URL',
+    },
+    {
         type: 'input',
         name: 'description',
         message: 'enter project description',
@@ -76,7 +86,6 @@ const questions = [
         name: 'license',
         choices: ['MIT', 'Apache 2.0', 'GPL 3.0', 'GPL 2.0', 'LGPL 2.1', 'BSD 3', 'BSD 2', 'Microsoft Public', 'Eclipse 1.0', 'N/A']
     },
-
     {
         type: 'input',
         name: 'usage',
