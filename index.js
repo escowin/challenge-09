@@ -7,7 +7,6 @@ const generateMarkdown = require('./utils/generateMarkdown');
 
 // user & project questions
 const questions = [
-    // user inquiries
     {
       type: 'input',
       name: 'name',
@@ -80,36 +79,77 @@ const questions = [
         }
       }
     },
+    // confirm installation
     {
-      type: 'input',
-      name: 'installation',
-      message: 'enter project installation instructions'
+      type: 'confirm',
+      name: 'confirmInstallation',
+      message: 'does the project require installation?',
+      default: true
     },
     {
       type: 'input',
-      name: 'credits',
-      message: 'enter project collaborators (if applicable)'
+      name: 'installation',
+      message: 'enter installation instructions',
+      when: ({ confirmInstallation }) => confirmInstallation
+    },
+    // confirm collaboration
+    {
+      type: 'confirm',
+      name: 'confirmCollaboration',
+      message: 'is the project a collaboration?',
+      default: false
+    },
+    {
+      type: 'input',
+      name: 'collaboration',
+      message: 'enter project collaborators',
+      when: ({ confirmCollaboration }) => confirmCollaboration
+    },
+    // confirm license
+    {
+      type: 'confirm',
+      name: 'confirmLicense',
+      message: 'does the project use an open source license?',
+      default: false
     },
     {
       type: 'list',
       name: 'license',
-      choices: ['Apache 2.0', 'BSD 2', 'BSD 3', 'GPL 2.0', 'GPL 3.0', 'LGPL 2.1', 'MIT', 'Microsoft Public', 'N/A']
+      choices: ['Apache 2.0', 'BSD 2', 'BSD 3', 'GPL 2.0', 'GPL 3.0', 'LGPL 2.1', 'MIT', 'Microsoft Public'],
+      when: ({ confirmLicense }) => confirmLicense
+    },
+    // confirm usage & contributing guidelines
+    {
+      type: 'confirm',
+      name: 'confirmUsageAndContribution',
+      message: 'include usage information and contributing guidelines?'
     },
     {
       type: 'input',
       name: 'usage',
-      message: 'enter usage information'
+      message: 'enter usage information',
+      when: ({ confirmUsageAndContribution }) => confirmUsageAndContribution
     },
     {
       type: 'input',
       name: 'contributing',
-      message: 'enter contributing guidelines'
+      message: 'enter contributing guidelines',
+      when: ({ confirmUsageAndContribution }) => confirmUsageAndContribution
+    },
+    // confirm test
+    {
+      type: 'confirm',
+      name: 'confirmTest',
+      message: 'can tests be run on the project?',
+      default: true
     },
     {
       type: 'input',
       name: 'test',
-      message: 'enter test instructions'
+      message: 'enter test instructions',
+      when: ({ confirmTest }) => confirmTest
     },
+    // confirm table of contents
     {
       type: 'confirm',
       name: 'table',
