@@ -7,21 +7,38 @@
   ## Description
   e
   
-  undefined
-  ## INSTALLATION
-  install
+  ## TABLE OF CONTENTS
+  
+  * [Usage](#usage)
+  
+ * [License](#license)
 
-  ## USAGE
-  use
+  * [Contributing](#contributing)
+
+  * [Tests](#tests)
+
+  * [Author](#author)
+
+    
+  ## Installation
+
+  Run the following command to install necessary dependencies:
+  ```
+  node index
+  ```
+
+  
   
     ## LICENSE
     Apache 2.0.
     
-  ## CONTRIBUTING
-  contribute
+  
 
-  ## TESTS  
-  running test now
+  ## Tests
+  Run the following command to run tests:
+  ```
+  run rest
+  ```
 
   ## Author
   e
