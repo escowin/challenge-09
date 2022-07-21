@@ -3,6 +3,8 @@ const fs = require('fs');
 const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown');
 
+// to do: conditionally render usage, collabs, installation, etc. use if statements.
+
 // user & project questions
 const questions = [
     // user inquiries
@@ -91,7 +93,7 @@ const questions = [
     {
       type: 'list',
       name: 'license',
-      choices: ['MIT', 'Apache 2.0', 'GPL 3.0', 'GPL 2.0', 'LGPL 2.1', 'BSD 3', 'BSD 2', 'Microsoft Public', 'Eclipse 1.0', 'N/A']
+      choices: ['Apache 2.0', 'BSD 2', 'BSD 3', 'GPL 2.0', 'GPL 3.0', 'LGPL 2.1', 'MIT', 'Microsoft Public', 'N/A']
     },
     {
       type: 'input',
