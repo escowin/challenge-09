@@ -104,7 +104,9 @@ function generateMarkdown(data) {
   // MARKDOWN FORMAT
   return `
   # ${data.title}
+
     * [Repo](https://github.com/${data.username}/${data.title})
+
     * [Live URL](${data.liveurl})
     ${renderLicenseBadge(data.license)}
   ## Description
@@ -133,7 +135,9 @@ function generateMarkdown(data) {
   ## Author
 
     ${data.name}
+
     * [Email](mailto:${data.email})
+    
     * [GitHub](https://github.com/${data.username})
 `;
 }

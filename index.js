@@ -3,8 +3,6 @@ const fs = require('fs');
 const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown');
 
-// to do: conditionally render usage, collabs, installation, etc. use if statements.
-
 // user & project questions
 const questions = [
     {
@@ -121,7 +119,7 @@ function writeToFile(fileName, data) {
   });
 }
 
-// logic: initialize app
+// logic: initialize app to user via CLI
 function init() {
     inquirer.prompt(questions).then((data) => {
         writeToFile("./READMEtest.md", data);
