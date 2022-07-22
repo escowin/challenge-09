@@ -79,75 +79,30 @@ const questions = [
         }
       }
     },
-    // confirm installation
-    {
-      type: 'confirm',
-      name: 'confirmInstallation',
-      message: 'does the project require installation?',
-      default: true
-    },
     {
       type: 'input',
       name: 'installation',
-      message: 'enter installation instructions',
-      when: ({ confirmInstallation }) => confirmInstallation
-    },
-    // confirm collaboration
-    {
-      type: 'confirm',
-      name: 'confirmCollaboration',
-      message: 'is the project a collaboration?',
-      default: false
-    },
-    {
-      type: 'input',
-      name: 'collaboration',
-      message: 'enter project collaborators',
-      when: ({ confirmCollaboration }) => confirmCollaboration
-    },
-    // confirm license
-    {
-      type: 'confirm',
-      name: 'confirmLicense',
-      message: 'does the project use an open source license?',
-      default: false
+      message: 'enter command line installation instructions'
     },
     {
       type: 'list',
       name: 'license',
-      choices: ['Apache 2.0', 'BSD 2', 'BSD 3', 'GPL 2.0', 'GPL 3.0', 'LGPL 2.1', 'MIT', 'Microsoft Public'],
-      when: ({ confirmLicense }) => confirmLicense
-    },
-    // confirm usage & contributing guidelines
-    {
-      type: 'confirm',
-      name: 'confirmUsageAndContribution',
-      message: 'include usage information and contributing guidelines?'
+      choices: ['Apache', 'BSD', 'GPL', 'LGPL', 'MIT', 'Microsoft', 'None']
     },
     {
       type: 'input',
       name: 'usage',
-      message: 'enter usage information',
-      when: ({ confirmUsageAndContribution }) => confirmUsageAndContribution
+      message: 'enter usage information'
     },
     {
       type: 'input',
       name: 'contributing',
-      message: 'enter contributing guidelines',
-      when: ({ confirmUsageAndContribution }) => confirmUsageAndContribution
-    },
-    // confirm test
-    {
-      type: 'confirm',
-      name: 'confirmTest',
-      message: 'can tests be run on the project?',
-      default: true
+      message: 'enter contributing guidelines'
     },
     {
       type: 'input',
       name: 'test',
-      message: 'enter test instructions',
-      when: ({ confirmTest }) => confirmTest
+      message: 'enter command line test instructions',
     },
     // confirm table of contents
     {

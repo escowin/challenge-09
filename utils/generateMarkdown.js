@@ -1,50 +1,56 @@
 // Function that returns a license badge based on which license is passed in
 // If no license, returns an empty string
 function renderLicenseBadge(license) {
-  if (license !== 'N/A') {
+  if (license !== 'None') {
     return `* [License](https://img.shields.io/badge/license-${license}-blue.svg)
     `;
   }
   return '';
 }
 
-// logic |  rendering ToC links
+// logic |  render installation link & section
 function renderInstallationLink(installation) {
-  if (installation === true) {
+  if (installation !== '') {
     return `\n * [Installation](#installtion)\n`;
   } else {
     return '';
   }
 }
 
+// function renderInstallationSection(installation) {
+//   if (installation !== '') {
+//     return `\n * `
+//   }
+//   return '';
+// }
+
+// logic | render license link & section
 function renderLicenseLink(license) {
-  if (license !== 'N/A') {
+  if (license !== 'None') {
     return `\n * [License](#license)\n`;
   } else {
     return '';
   }
 }
 
-// logic | render sections below ToC
 function renderLicenseSection(license) {
-  if (license !== 'N/A') {
-    return `
-    ## LICENSE
-    ${license}.
-    `;
+  if (license !== 'None') {
+    return `## License
+
+This project is licensed under the ${license} license.`;
   }
   return '';
 }
 
+// logic  | render usage link & section
 function renderUsageSection(usage) {
-  if (usage === true) {
+  if (usage !== '') {
     return `
     ## USAGE
     ${usage}
     `;
-  } else {
-    return '';
   }
+  return '';
 }
 
 function renderContributingSection(contributing) {
@@ -64,12 +70,10 @@ function renderTableOfContents(table) {
     return `
   ## TABLE OF CONTENTS
   ${renderInstallationLink(table.installation)}
-  * [Usage](#usage)
+  ${renderUsageLink(table.usage)}
   ${renderLicenseLink(table.license)}
-  * [Contributing](#contributing)
-
-  * [Tests](#tests)
-
+  ${renderContributingLink(table.contributing)}
+  ${renderTestLink(table.test)}
   * [Author](#author)
 
     `
