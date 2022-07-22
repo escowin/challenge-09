@@ -104,12 +104,11 @@ const questions = [
       name: 'test',
       message: 'enter command line test instructions',
     },
-    // confirm table of contents
     {
-      type: 'confirm',
-      name: 'table',
-      message: 'include table of contents?',
-      default: true
+      type: 'checkbox',
+      name: 'languages',
+      message: 'project language(s) used:',
+      choices: ['CSS', 'Bootstrap', 'ES6', 'Express.js', 'Handlebars.js', 'HTML', 'JavaScript', 'MongoDB', 'MySQL', 'Node.js', 'NoSQL', 'React.js', 'Other'],
     }
 ]
 

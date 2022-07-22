@@ -1,4 +1,3 @@
-// Function that returns a license badge based on which license is passed in
 // If no license, returns an empty string
 function renderLicenseBadge(license) {
   if (license !== 'None') {
@@ -45,20 +44,6 @@ function renderTestLink(test) {
 }
 
 // logic | render sections
-function renderTableOfContents(table) {
-  if (table === true) {
-    return `
-  ## TABLE OF CONTENTS
-    ${renderInstallationLink(table.installation)}
-    ${renderUsageLink(table.usage)}
-    ${renderLicenseLink(table.license)}
-    ${renderContributingLink(table.contributing)}
-    ${renderTestLink(table.test)}
-    
-  * [Author](#author)
-  `
-  }
-}
 
 function renderInstallationSection(installation) {
   if (installation !== '') {
@@ -76,7 +61,8 @@ function renderInstallationSection(installation) {
 
 function renderUsageSection(usage) {
   if (usage !== '') {
-    return `## USAGE
+    return `## Usage
+
     ${usage}
     `;
   }
@@ -86,6 +72,7 @@ function renderUsageSection(usage) {
 function renderLicenseSection(license) {
   if (license !== 'None') {
     return `## License
+
     This project is licensed under the ${license} license.`;
   }
   return '';
@@ -102,12 +89,12 @@ function renderContributingSection(contributing) {
 
 function renderTestSection(test) {
   if (test !== '') {
-    return `## Tests
+    return `## Test
+    
     Run the following command to run tests:
     \`\`\`
     ${test}
-    \`\`\`
-    `;
+    \`\`\``;
   }
   return '';
 }
@@ -117,21 +104,37 @@ function generateMarkdown(data) {
   // MARKDOWN FORMAT
   return `
   # ${data.title}
-  * [Repo](https://github.com/${data.username}/${data.title})
-  * [Live URL](${data.liveurl})
-  ${renderLicenseBadge(data.license)}
+    * [Repo](https://github.com/${data.username}/${data.title})
+    * [Live URL](${data.liveurl})
+    ${renderLicenseBadge(data.license)}
   ## Description
-  ${data.description}
-  ${renderTableOfContents(data.table)}
+    ${data.description}
+
+  ## Table of Contents
+  ${renderInstallationLink(data.installation)}
+  ${renderUsageLink(data.usage)}
+  ${renderLicenseLink(data.license)}
+  ${renderContributingLink(data.contributing)}
+  ${renderTestLink(data.test)}
+  * [Languages](#languages)
+
+  * [Author](#author)
+
   ${renderInstallationSection(data.installation)}
   ${renderUsageSection(data.usage)}
   ${renderLicenseSection(data.license)}
   ${renderContributingSection(data.contributing)}
   ${renderTestSection(data.test)}
+  
+  ## Languages
+
+    ${data.languages.join(', ')}
+
   ## Author
-  ${data.name}
-  * [Email](mailto:${data.email})
-  * [GitHub](https://github.com/${data.username})
+
+    ${data.name}
+    * [Email](mailto:${data.email})
+    * [GitHub](https://github.com/${data.username})
 `;
 }
 
