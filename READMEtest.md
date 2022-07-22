@@ -1,35 +1,42 @@
 
-  # test
-  * [Repo](https://github.com/test/test)
-  * [Live URL](test)
-  * [License](https://img.shields.io/badge/license-Apache-blue.svg)
-    
+  # readme-generator
+  * [Repo](https://github.com/escowin/readme-generator)
+  * [Live URL](https://github.com/escowinart/readme-generator)
+  
   ## Description
-  test
-  undefined
+  generating readme.md files via command line prompts.
+  
+  ## TABLE OF CONTENTS
+    
+  * [Installation](#installtion)
+
+    
+  * [Usage](#usage)
+
+    
+  * [License](#license)
+
+    
+  * [Contributing](#contributing)
+
+    
+  * [Test](#test)
+
+  * [Author](#author)
+  
   ## Installation
 
-  Run the following command to install necessary dependencies:
-  ```
-  
-  ```
+    Run the following command to install necessary dependencies:
 
-  
-    ## USAGE
-    test
+    ```
+    npm init; node index;
+    ```
     
-  ## License
-
-This project is licensed under the Apache license.
   
-
-  ## Tests
-  Run the following command to run tests:
-  ```
   
-  ```
-
+  
+  
   ## Author
-  test
-  * [Email](mailto:test)
-  * [GitHub](https://github.com/test)
+  Edwin Escobar
+  * [Email](mailto:edwin@escowinart.com)
+  * [GitHub](https://github.com/escowin)

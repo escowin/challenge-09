@@ -8,77 +8,110 @@ function renderLicenseBadge(license) {
   return '';
 }
 
-// logic |  render installation link & section
+// logic |  render table of contents links
 function renderInstallationLink(installation) {
   if (installation !== '') {
-    return `\n * [Installation](#installtion)\n`;
-  } else {
-    return '';
-  }
-}
-
-// function renderInstallationSection(installation) {
-//   if (installation !== '') {
-//     return `\n * `
-//   }
-//   return '';
-// }
-
-// logic | render license link & section
-function renderLicenseLink(license) {
-  if (license !== 'None') {
-    return `\n * [License](#license)\n`;
-  } else {
-    return '';
-  }
-}
-
-function renderLicenseSection(license) {
-  if (license !== 'None') {
-    return `## License
-
-This project is licensed under the ${license} license.`;
+    return `\n  * [Installation](#installtion)\n`;
   }
   return '';
 }
 
-// logic  | render usage link & section
+function renderUsageLink(usage) {
+  if (usage !== '') {
+    return `\n  * [Usage](#usage)\n`;
+  }
+  return '';
+}
+
+function renderLicenseLink(license) {
+  if (license !== 'None') {
+    return `\n  * [License](#license)\n`;
+  }
+  return '';
+}
+
+function renderContributingLink(contributing) {
+  if (contributing !== '') {
+    return `\n  * [Contributing](#contributing)\n`;
+  }
+  return '';
+}
+
+function renderTestLink(test) {
+  if (test !== '') {
+    return `\n  * [Test](#test)\n`;
+  }
+  return '';
+}
+
+// logic | render sections
+function renderTableOfContents(table) {
+  if (table === true) {
+    return `
+  ## TABLE OF CONTENTS
+    ${renderInstallationLink(table.installation)}
+    ${renderUsageLink(table.usage)}
+    ${renderLicenseLink(table.license)}
+    ${renderContributingLink(table.contributing)}
+    ${renderTestLink(table.test)}
+    
+  * [Author](#author)
+  `
+  }
+}
+
+function renderInstallationSection(installation) {
+  if (installation !== '') {
+    return `## Installation
+
+    Run the following command to install necessary dependencies:
+
+    \`\`\`
+    ${installation}
+    \`\`\`
+    `;
+  }
+  return '';
+}
+
 function renderUsageSection(usage) {
   if (usage !== '') {
-    return `
-    ## USAGE
+    return `## USAGE
     ${usage}
     `;
   }
   return '';
 }
 
+function renderLicenseSection(license) {
+  if (license !== 'None') {
+    return `## License
+    This project is licensed under the ${license} license.`;
+  }
+  return '';
+}
+
 function renderContributingSection(contributing) {
   if (contributing === true) {
-    return `
-    ## CONTRIBUTORS
+    return `## Contributing
     ${contributing}
     `;
-  } else {
-    return '';
   }
+  return '';
 }
 
-
-function renderTableOfContents(table) {
-  if (table === true) {
-    return `
-  ## TABLE OF CONTENTS
-  ${renderInstallationLink(table.installation)}
-  ${renderUsageLink(table.usage)}
-  ${renderLicenseLink(table.license)}
-  ${renderContributingLink(table.contributing)}
-  ${renderTestLink(table.test)}
-  * [Author](#author)
-
-    `
+function renderTestSection(test) {
+  if (test !== '') {
+    return `## Tests
+    Run the following command to run tests:
+    \`\`\`
+    ${test}
+    \`\`\`
+    `;
   }
+  return '';
 }
+
 // Function generates markdown for README
 function generateMarkdown(data) {
   // MARKDOWN FORMAT
@@ -90,23 +123,11 @@ function generateMarkdown(data) {
   ## Description
   ${data.description}
   ${renderTableOfContents(data.table)}
-  ## Installation
-
-  Run the following command to install necessary dependencies:
-  \`\`\`
-  ${data.installation}
-  \`\`\`
-
+  ${renderInstallationSection(data.installation)}
   ${renderUsageSection(data.usage)}
   ${renderLicenseSection(data.license)}
   ${renderContributingSection(data.contributing)}
-
-  ## Tests
-  Run the following command to run tests:
-  \`\`\`
-  ${data.test}
-  \`\`\`
-
+  ${renderTestSection(data.test)}
   ## Author
   ${data.name}
   * [Email](mailto:${data.email})
