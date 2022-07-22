@@ -10,7 +10,7 @@ function renderLicenseBadge(license) {
 // logic |  render table of contents links
 function renderInstallationLink(installation) {
   if (installation !== '') {
-    return `\n  * [Installation](#installtion)\n`;
+    return `\n  * [Installation](#installation)\n`;
   }
   return '';
 }
