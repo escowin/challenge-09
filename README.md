@@ -1,35 +1,58 @@
 
-  # readme-generator
-  * | Repo | https://github.com/escowin/readme-generator
+# readme-generator
+
+  * [Repo](https://github.com/escowin/readme-generator)
   
+## Description
 
-  ## DESCRIPTION
-  generates readmes
+  generating readme files via command line prompts.
+
+## Languages
+
+  ES6, JavaScript, Node.js
+
+## Table of Contents
+
+  * [Installation](#installation)
+
+  * [Usage](#usage)
   
-  ## TABLE OF CONTENTS
-  * [Installation](#INSTALLATION)
+  * [License](#license)
 
-  * [Usage](#USAGE)
+  * [Contributing](#contributing)
+
+  * [Test](#test)
+
+  * [Author](#author)
+
+## Installation
+
+  Run the following command to install necessary dependencies:
+
+  ```
+  npm init;
+  ```
+
+## Usage
+
+  use whenever a readme.md is needed for a project.
+
+
+## Contributing
+
+  contributions in figuring out how to delete an empty string placeholder would be greatly appreciated.
+
+## Test
   
-  * [Contributing](#CONTRIBUTING)
+  Run the following command to run tests:
+  ```
+  tbd
+  ```
 
-  * [Tests](#TESTS)
+## Author
 
-  * [Questions](#QUESTIONS)
-  
-  ## INSTALLATION
-  CLI | clone repo, npm i
+  Edwin Escobar
 
-  ## USAGE
-  clone & use
+  * [Email](mailto:edwin@escowinart.com)
 
-  
-  ## CONTRIBUTING
-  clone & mod to needs
-
-  ## TESTS
-  CLI | node index runs readme-generator
-
-  ## QUESTIONS (CONTACT)
-  * edwin@escowinart.com
-  * | REPO  | [GitHub](https://github.com/escowin)
+  * [GitHub](https://github.com/escowin)
