@@ -1,4 +1,11 @@
-// If no license, returns an empty string
+// logic |  render Live URL & License Badge lines
+function renderLiveUrl(liveurl) {
+  if (liveurl !== '') {
+    return `* [Live URL](${liveurl})`
+  }
+  return '';
+}
+
 function renderLicenseBadge(license) {
   if (license !== 'None') {
     return `* [License](https://img.shields.io/badge/license-${license}-blue.svg)
@@ -7,67 +14,15 @@ function renderLicenseBadge(license) {
   return '';
 }
 
-// logic |  render table of contents links
-function renderInstallationLink(installation) {
-  if (installation !== '') {
-    return `\n  * [Installation](#installation)\n`;
-  }
-  return '';
-}
-
-function renderUsageLink(usage) {
-  if (usage !== '') {
-    return `\n  * [Usage](#usage)\n`;
-  }
-  return '';
-}
-
+// logic |  render table of contents links, removed (learn to remove empty return strings)
 function renderLicenseLink(license) {
   if (license !== 'None') {
-    return `\n  * [License](#license)\n`;
+    return `\n* [License](#license)\n`;
   }
   return '';
 }
 
-function renderContributingLink(contributing) {
-  if (contributing !== '') {
-    return `\n  * [Contributing](#contributing)\n`;
-  }
-  return '';
-}
-
-function renderTestLink(test) {
-  if (test !== '') {
-    return `\n  * [Test](#test)\n`;
-  }
-  return '';
-}
-
-// logic | render sections
-
-function renderInstallationSection(installation) {
-  if (installation !== '') {
-    return `## Installation
-
-    Run the following command to install necessary dependencies:
-
-    \`\`\`
-    ${installation}
-    \`\`\`
-    `;
-  }
-  return '';
-}
-
-function renderUsageSection(usage) {
-  if (usage !== '') {
-    return `## Usage
-
-    ${usage}
-    `;
-  }
-  return '';
-}
+// logic | render sections, removed (see above)
 
 function renderLicenseSection(license) {
   if (license !== 'None') {
@@ -78,67 +33,69 @@ function renderLicenseSection(license) {
   return '';
 }
 
-function renderContributingSection(contributing) {
-  if (contributing === true) {
-    return `## Contributing
-    ${contributing}
-    `;
-  }
-  return '';
-}
-
-function renderTestSection(test) {
-  if (test !== '') {
-    return `## Test
-    
-    Run the following command to run tests:
-    \`\`\`
-    ${test}
-    \`\`\``;
-  }
-  return '';
-}
-
 // Function generates markdown for README
 function generateMarkdown(data) {
   // MARKDOWN FORMAT
   return `
-  # ${data.title}
+# ${data.title}
 
-    * [Repo](https://github.com/${data.username}/${data.title})
+  * [Repo](https://github.com/${data.username}/${data.title})
 
-    * [Live URL](${data.liveurl})
-    ${renderLicenseBadge(data.license)}
-  ## Description
-    ${data.description}
+  ${renderLiveUrl(data.liveurl)}
+  ${renderLicenseBadge(data.license)}
+## Description
 
-  ## Table of Contents
-  ${renderInstallationLink(data.installation)}
-  ${renderUsageLink(data.usage)}
+  ${data.description}
+
+## Languages
+
+  ${data.languages.join(', ')}
+
+## Table of Contents
+
+  * [Installation](#installation)
+
+  * [Usage](#usage)
   ${renderLicenseLink(data.license)}
-  ${renderContributingLink(data.contributing)}
-  ${renderTestLink(data.test)}
-  * [Languages](#languages)
+  * [License](#license)
+
+  * [Contributing](#contributing)
+
+  * [Test](#test)
 
   * [Author](#author)
 
-  ${renderInstallationSection(data.installation)}
-  ${renderUsageSection(data.usage)}
-  ${renderLicenseSection(data.license)}
-  ${renderContributingSection(data.contributing)}
-  ${renderTestSection(data.test)}
+## Installation
+
+  Run the following command to install necessary dependencies:
+
+  \`\`\`
+  ${data.installation}
+  \`\`\`
+
+## Usage
+
+  ${data.usage}
+
+${renderLicenseSection(data.license)}
+## Contributing
+
+  ${data.contributing}
+
+## Test
   
-  ## Languages
+  Run the following command to run tests:
+  \`\`\`
+  ${data.test}
+  \`\`\`
 
-    ${data.languages.join(', ')}
+## Author
 
-  ## Author
+  ${data.name}
 
-    ${data.name}
+  * [Email](mailto:${data.email})
 
-    * [Email](mailto:${data.email})
-    
-    * [GitHub](https://github.com/${data.username})
+  * [GitHub](https://github.com/${data.username})
 `;
 }
 

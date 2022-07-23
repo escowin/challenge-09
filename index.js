@@ -78,6 +78,12 @@ const questions = [
       }
     },
     {
+      type: 'checkbox',
+      name: 'languages',
+      message: 'project language(s) used:',
+      choices: ['CSS', 'Bootstrap', 'ES6', 'Express.js', 'GraphQL', 'Handlebars.js', 'HTML', 'JavaScript', 'jQuery', 'MongoDB', 'MySQL', 'Node.js', 'NoSQL', 'React.js', 'Redux'],
+    },
+    {
       type: 'input',
       name: 'installation',
       message: 'enter command line installation instructions'
@@ -101,12 +107,6 @@ const questions = [
       type: 'input',
       name: 'test',
       message: 'enter command line test instructions',
-    },
-    {
-      type: 'checkbox',
-      name: 'languages',
-      message: 'project language(s) used:',
-      choices: ['CSS', 'Bootstrap', 'ES6', 'Express.js', 'Handlebars.js', 'HTML', 'JavaScript', 'MongoDB', 'MySQL', 'Node.js', 'NoSQL', 'React.js', 'Other'],
     }
 ]
 
