@@ -115,14 +115,34 @@ function writeToFile(fileName, data) {
   fs.writeFile(fileName, generateMarkdown(data), function (err) {
     if (err) {
       return console.log(err);
+    } else {
+      console.log(`
+        file saved to this directory:
+      
+        ./READMEtest.md
+
+······································
+·       readme-generator fin         ·
+·····································`);
     }
   });
 }
 
 // logic: initialize app to user via CLI
 function init() {
+    console.log(`
+·······································
+·                                     ·
+·        readme-generator v1.5        ·
+·          © 2022 escowin             ·
+·                                     ·
+·······································
+`);
+
     inquirer.prompt(questions).then((data) => {
         writeToFile("./READMEtest.md", data);
+        console.log(`
+        writing file...`);
     });
   }
 

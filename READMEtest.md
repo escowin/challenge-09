@@ -2,10 +2,12 @@
 # readme-generator
 
   * [Repo](https://github.com/escowin/readme-generator)
+
+  
   
 ## Description
 
-  generating readme files via command line prompts.
+  generate a readme.md via command-line prompts
 
 ## Languages
 
@@ -30,23 +32,23 @@
   Run the following command to install necessary dependencies:
 
   ```
-  npm init;
+  node index;
   ```
 
 ## Usage
 
-  use whenever a readme.md is needed for a project.
+  clone repo, run app through terminal
 
 
 ## Contributing
 
-  contributions in figuring out how to delete an empty string placeholder would be greatly appreciated.
+  use Node.js
 
 ## Test
   
   Run the following command to run tests:
   ```
-  tbd
+  n/a
   ```
 
 ## Author
