@@ -81,8 +81,9 @@ const questions = [
       type: 'checkbox',
       name: 'languages',
       message: 'project language(s) used:',
-      choices: ['CSS', 'Bootstrap', 'ES6', 'Express.js', 'GraphQL', 'Handlebars.js', 'HTML', 'JavaScript', 'jQuery', 'MongoDB', 'MySQL', 'Node.js', 'NoSQL', 'React.js', 'Redux'],
+      choices: ['HTML', 'CSS', 'JavaScript', 'ES6', 'Bootstrap', 'jQuery', 'Node.js', 'Express.js', 'GraphQL', 'Handlebars.js', 'MongoDB', 'MySQL', 'NoSQL', 'React.js', 'Redux'],
     },
+    // reconfigure above: if JS/ES6 is selected, ask which frameworks/libraries were used (jQuery, Moment, etc.) using when
     {
       type: 'input',
       name: 'installation',

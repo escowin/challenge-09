@@ -1,17 +1,17 @@
 
-# readme-generator
+# solar-weather-app
 
-  * [Repo](https://github.com/escowin/readme-generator)
+  * [Repo](https://github.com/escowin/solar-weather-app)
 
-  
+  * [Live URL](https://escowin.github.io/solar-weather-app)
   
 ## Description
 
-  generate a readme.md via command-line prompts
+  Taking a trip to the sun, but don't know what to pack? Look no further. Checkout the latest solar temperature and activity right here.
 
 ## Languages
 
-  ES6, JavaScript, Node.js
+  CSS, ES6, HTML, JavaScript
 
 ## Table of Contents
 
@@ -32,23 +32,23 @@
   Run the following command to install necessary dependencies:
 
   ```
-  node index;
+  
   ```
 
 ## Usage
 
-  clone repo, run app through terminal
+  
 
 
 ## Contributing
 
-  use Node.js
+  
 
 ## Test
   
   Run the following command to run tests:
   ```
-  n/a
+  
   ```
 
 ## Author
