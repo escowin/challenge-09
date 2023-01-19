@@ -1,17 +1,17 @@
 
-# solar-weather-app
+# social-network-api
 
-  * [Repo](https://github.com/escowin/solar-weather-app)
+  * [Repo](https://github.com/escowin/social-network-api)
 
-  * [Live URL](https://escowin.github.io/solar-weather-app)
+  
   
 ## Description
 
-  Taking a trip to the sun, but don't know what to pack? Look no further. Checkout the latest solar temperature and activity right here.
+  An API backend built with the noSQL database MongoDB. Using the Mongoose ODM,  User & Thought models have full REST API functionality. Routes are modularizes for code scaling & legibility. Virtuals are used to track counts, and getters are used to reformat timestamps on Thoughts and Reactions. Reactions are subdocuments within a Thought document.
 
 ## Languages
 
-  CSS, ES6, HTML, JavaScript
+  JavaScript, ES6, Node.js, Express.js, MongoDB, NoSQL
 
 ## Table of Contents
 
@@ -32,7 +32,7 @@
   Run the following command to install necessary dependencies:
 
   ```
-  
+  npm i
   ```
 
 ## Usage
@@ -53,7 +53,7 @@
 
 ## Author
 
-  Edwin Escobar
+  Edwin M. Escobar
 
   * [Email](mailto:edwin@escowinart.com)
 
