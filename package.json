@@ -1,7 +1,7 @@
 {
   "name": "readme-generator",
-  "version": "1.0.0",
-  "description": "[How to create a Professional README](./readme-guide.md)",
+  "version": "1.6.0",
+  "description": "generates a readme.md from the cli",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/escowin/challenge-09.git"
+    "url": "git+https://github.com/escowin/readme-generator.git"
   },
   "keywords": [
     "readme",
