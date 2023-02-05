@@ -81,7 +81,7 @@ const questions = [
     type: "checkbox",
     name: "languages",
     message: "select project languages:",
-    choices: ["HTML", "CSS", "JavaScript", "Ruby", "SQL"],
+    choices: ["HTML", "CSS", "Javascript", "Ruby", "SQL"],
   },
   {
     type: "confirm",
@@ -93,7 +93,7 @@ const questions = [
     type: "checkbox",
     name: "frameworks",
     message: "select frameworks:",
-    choices: ["React", "Nodes", "Express", "Jest", "Ruby on Rails"],
+    choices: ["React", "Node", "Express", "Jest", "Ruby on Rails"],
     when: (answers) => answers.frameworks_used,
   },
   {
@@ -110,6 +110,7 @@ const questions = [
       "Bootstrap",
       "bcrypt",
       "Handlebars",
+      "inquirer",
       "jQuery",
       "Mongoose",
       "Redux",
@@ -143,16 +144,6 @@ const questions = [
   },
   {
     type: "input",
-    name: "usage",
-    message: "enter usage information",
-  },
-  {
-    type: "input",
-    name: "contributing",
-    message: "enter contributing guidelines",
-  },
-  {
-    type: "input",
     name: "test",
     message: "enter command line test instructions",
   },
@@ -160,13 +151,16 @@ const questions = [
 
 // logic: initialize app to user via CLI
 function init() {
+  let date = new Date().getFullYear();
+
   console.log(`
-·······································
-·                                     ·
-·        readme-generator v1.6        ·
-·          © 2022 escowin             ·
-·                                     ·
-·······································
+·················································
+·                                               ·
+·              readme-generator v1.6            ·
+·            © ${date} edwin m. escobar            ·
+·  https://github.com/escowin/readme-generator  ·
+·                                               ·
+·················································
 `);
 
   inquirer.prompt(questions).then((answers) => {

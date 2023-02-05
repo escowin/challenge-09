@@ -1,58 +1,39 @@
 
 # readme-generator
 
-  * [Repo](https://github.com/escowin/readme-generator)
-  
 ## Description
+[Repo](https://github.com/escowin/readme-generator)
 
-  generating readme files via command line prompts.
-
-## Languages
-
-  ES6, JavaScript, Node.js
+node app that generates a readme file through command line prompts
 
 ## Table of Contents
-
-  * [Installation](#installation)
-
-  * [Usage](#usage)
-  
-  * [License](#license)
-
-  * [Contributing](#contributing)
-
-  * [Test](#test)
-
-  * [Author](#author)
+- [Installation](#installation)
+- [Code](#code)
+- [Test](#test)
+- [Screenshots](#screenshots)
+- [Author](#author)
 
 ## Installation
+Run the following command to install necessary dependencies:
+```
+$ npm i
+```
 
-  Run the following command to install necessary dependencies:
-
-  ```
-  npm init;
-  ```
-
-## Usage
-
-  use whenever a readme.md is needed for a project.
-
-
-## Contributing
-
-  contributions in figuring out how to delete an empty string placeholder would be greatly appreciated.
+## Code
+- Languages: Javascript
+- Frameworks: Node
+- Libraries: inquirer
 
 ## Test
-  
-  Run the following command to run tests:
-  ```
-  tbd
-  ```
+Run the following command to run tests:
+```
+n/a
+```
+
+## Screenshots
+![screenshot](insert relative path)
 
 ## Author
-
-  Edwin Escobar
-
-  * [Email](mailto:edwin@escowinart.com)
-
-  * [GitHub](https://github.com/escowin)
+###  Edwin M. Escobar
+- [GitHub](https://github.com/escowin)
+- [Email](mailto:edwin@escowinart.com)

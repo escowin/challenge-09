@@ -1,102 +1,80 @@
-// logic |  render Live URL & License Badge lines
-function renderLiveUrl(liveurl) {
-  if (liveurl !== '') {
-    return `* [Live URL](${liveurl})`
-  }
-  return '';
-}
-
-function renderLicenseBadge(license) {
-  if (license !== 'None') {
-    return `* [License](https://img.shields.io/badge/license-${license}-blue.svg)
-    `;
-  }
-  return '';
-}
-
-// logic |  render table of contents links, removed (learn to remove empty return strings)
-function renderLicenseLink(license) {
-  if (license !== 'None') {
-    return `\n* [License](#license)\n`;
-  }
-  return '';
-}
-
-// logic | render sections, removed (see above)
-
-function renderLicenseSection(license) {
-  if (license !== 'None') {
-    return `## License
-
-    This project is licensed under the ${license} license.`;
-  }
-  return '';
-}
-
-// Function generates markdown for README
 function generateMarkdown(data) {
-  // MARKDOWN FORMAT
+  // markdown template literal
   return `
 # ${data.title}
 
-  * [Repo](https://github.com/${data.username}/${data.title})
-
-  ${renderLiveUrl(data.liveurl)}
-  ${renderLicenseBadge(data.license)}
 ## Description
+[Repo](https://github.com/${data.username}/${data.title})
+${renderLiveUrl(data.liveurl)}
 
-  ${data.description}
-
-## Languages
-
-  ${data.languages.join(', ')}
+${data.description}
 
 ## Table of Contents
-
-  * [Installation](#installation)
-
-  * [Usage](#usage)
-  ${renderLicenseLink(data.license)}
-  * [License](#license)
-
-  * [Contributing](#contributing)
-
-  * [Test](#test)
-
-  * [Author](#author)
+- [Installation](#installation)
+- [Code](#code)
+- [Test](#test)
+- [Screenshots](#screenshots)
+${renderLicenseLink(data.license)}
+- [Author](#author)
 
 ## Installation
+Run the following command to install necessary dependencies:
+\`\`\`
+$ ${data.installation}
+\`\`\`
 
-  Run the following command to install necessary dependencies:
-
-  \`\`\`
-  ${data.installation}
-  \`\`\`
-
-## Usage
-
-  ${data.usage}
-
-${renderLicenseSection(data.license)}
-## Contributing
-
-  ${data.contributing}
+## Code
+- Languages: ${data.languages.join(", ")}
+${data.frameworks_used ? `- Frameworks: ${data.frameworks.join(", ")}` : ""}
+${data.libraries_used ? `- Libraries: ${data.libraries.join(", ")}` : ""}
+${data.database_used ? `- Database: ${data.database.join(", ")}` : ""}
 
 ## Test
-  
-  Run the following command to run tests:
-  \`\`\`
-  ${data.test}
-  \`\`\`
+Run the following command to run tests:
+\`\`\`
+${data.test}
+\`\`\`
 
+## Screenshots
+![mobile](insert relative path)
+
+![tablet](insert relative path)
+
+![desktop](insert relative path)
+
+${renderLicenseSection(data.license)}
 ## Author
-
-  ${data.name}
-
-  * [Email](mailto:${data.email})
-
-  * [GitHub](https://github.com/${data.username})
+### ${data.name}
+- [Email](mailto:${data.email})
+- [GitHub](https://github.com/${data.username})
 `;
+}
+
+// render sections
+// - title
+function renderLiveUrl(liveurl) {
+  if (liveurl !== "") {
+    return `* [Live URL](${liveurl})`;
+  }
+  return "";
+}
+
+// - table of contents
+function renderLicenseLink(license) {
+  if (license !== "None") {
+    return `\n* [License](#license)\n`;
+  }
+  return "";
+}
+
+// - license
+function renderLicenseSection(license) {
+  if (license !== "None") {
+    return `## License
+
+    This project is licensed under the [${license}](https://img.shields.io/badge/license-${license}-blue.svg) license.`;
+  }
+  return "";
 }
 
 module.exports = generateMarkdown;
