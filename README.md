@@ -4,7 +4,7 @@
 ## Description
 [Repo](https://github.com/escowin/readme-generator)
 
-node app that generates a readme file through command line prompts
+generates readme files via command line prompts
 
 ## Table of Contents
 - [Installation](#installation)
@@ -31,7 +31,7 @@ n/a
 ```
 
 ## Screenshots
-![screenshot](insert relative path)
+![screenshot](./images/readme-generator.jpg)
 
 ## Author
 ###  Edwin M. Escobar

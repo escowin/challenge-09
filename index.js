@@ -87,7 +87,7 @@ const questions = [
     type: "confirm",
     name: "frameworks_used",
     message: "were any frameworks used?",
-    default: false,
+    default: true,
   },
   {
     type: "checkbox",
@@ -100,7 +100,7 @@ const questions = [
     type: "confirm",
     name: "libraries_used",
     message: "were any libraries used?",
-    default: false,
+    default: true,
   },
   {
     type: "checkbox",
@@ -123,7 +123,7 @@ const questions = [
     type: "confirm",
     name: "database_used",
     message: "does this project use a database?",
-    default: false,
+    default: true,
   },
   {
     type: "list",
@@ -177,13 +177,13 @@ function writeToFile(fileName, data) {
       return console.log(err);
     } else {
       console.log(`
-        file saved to this directory:
+              file saved to this directory:
       
-        ./READMEtest.md
+              ./READMEtest.md
 
-······································
-·       readme-generator fin         ·
-·····································`);
+·················································
+·             readme-generator fin              ·
+·················································`);
     }
   });
 }
