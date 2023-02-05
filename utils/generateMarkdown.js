@@ -23,24 +23,24 @@ Run the following command to install necessary dependencies:
 $ ${data.installation}
 \`\`\`
 
-## Code
-- Languages: ${data.languages.join(", ")}
-${data.frameworks_used ? `- Frameworks: ${data.frameworks.join(", ")}` : ""}
-${data.libraries_used ? `- Libraries: ${data.libraries.join(", ")}` : ""}
-${data.database_used ? `- Database: ${data.database.join(", ")}` : ""}
-
 ## Test
 Run the following command to run tests:
 \`\`\`
 ${data.test}
 \`\`\`
 
+## Code
+- Languages: ${data.languages.join(", ")}
+${data.frameworks_used ? `- Frameworks: ${data.frameworks.join(", ")}` : ""}
+${data.libraries_used ? `- Libraries: ${data.libraries.join(", ")}` : ""}
+${data.database_used ? `- Database: ${data.database}` : ""}
+
 ## Screenshots
-![mobile](insert relative path)
+![mobile](path)
 
-![tablet](insert relative path)
+![tablet](path)
 
-![desktop](insert relative path)
+![desktop](path)
 
 ${renderLicenseSection(data.license)}
 ## Author
