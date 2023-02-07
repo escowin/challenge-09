@@ -36,11 +36,11 @@ ${data.libraries_used ? `- Libraries: ${data.libraries.join(", ")}` : ""}
 ${data.database_used ? `- Database: ${data.database}` : ""}
 
 ## Screenshots
-![mobile](path)
+![mobile](./images/small/${data.title}.jpg)
 
-![tablet](path)
+![tablet](./images/medium/${data.title}.jpg)
 
-![desktop](path)
+![desktop](./images/desktop/${data.title}.jpg)
 
 ${renderLicenseSection(data.license)}
 ## Author
