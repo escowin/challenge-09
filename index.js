@@ -163,30 +163,44 @@ function init() {
 ·················································
 `);
 
-  inquirer.prompt(questions).then((answers) => {
-    writeToFile("./READMEtest.md", answers);
-    console.log(`
-        writing file...`);
-  });
+  inquirer
+    .prompt(questions)
+    .then((answers) => writeToFile("README.md", answers));
 }
 
 // logic: write README file
 function writeToFile(fileName, data) {
-  fs.writeFile(fileName, generateMarkdown(data), (err) => {
+  const path = "./dist/";
+  fs.writeFile(`${path}${fileName}`, generateMarkdown(data), (err) => {
     if (err) {
       return console.log(err);
     } else {
-      console.log(`
-              file saved to this directory:
-      
-              ./READMEtest.md
-
-·················································
-·             readme-generator fin              ·
-·················································`);
+      console.log(`wrote file to ${path}${fileName}`);
     }
   });
 }
 
 // Function call to initialize app
-init();
+// init();
+
+// testing
+function mockReadMe() {
+  const mockData = {
+    name: "test name",
+    username: "user",
+    email: "user@test.com",
+    title: "test-readme",
+    liveurl: "n/a",
+    description: "testing mock data",
+    languages: ["Markdown"],
+    frameworks_used: false,
+    libraries_used: false,
+    database_used: false,
+    installation: "npm i",
+    license: "Apache",
+    test: "npm run test",
+  };
+
+  writeToFile("README.md", mockData);
+}
+mockReadMe();
