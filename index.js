@@ -197,8 +197,9 @@ function mockReadMe() {
     libraries_used: false,
     database_used: false,
     installation: "npm i",
-    license: "Apache",
+    usage: "npm run develop",
     test: "npm run test",
+    license: "Apache",
   };
 
   writeToFile("README.md", mockData);

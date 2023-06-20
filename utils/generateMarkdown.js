@@ -26,13 +26,13 @@ $ ${data.installation}
 ## Test
 Run the following command to run tests:
 \`\`\`
-${data.test}
+$ ${data.test}
 \`\`\`
 
 ## Usage
 Run the following command to run app:
 \`\`\`
-npm start
+$ ${data.usage}
 \`\`\`
 
 ![mobile](./assets/images/small/${data.title}.jpg)
