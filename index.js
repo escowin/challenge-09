@@ -3,8 +3,9 @@ const fs = require("fs");
 const inquirer = require("inquirer");
 const generateMarkdown = require("./utils/generateMarkdown");
 
-// user & project questions
+// questions about the user & application
 const questions = [
+  // - user
   {
     type: "input",
     name: "name",
@@ -22,41 +23,38 @@ const questions = [
     type: "input",
     name: "username",
     message: "enter github username",
-    validate: (nameInput) => {
-      if (nameInput) {
-        return true;
-      } else {
-        console.log("enter github username");
+    validate: (input) => {
+      if (!input) {
+        console.log("username required");
         return false;
       }
+      return true;
     },
   },
   {
     type: "input",
     name: "email",
     message: "enter email address",
-    validate: (nameInput) => {
-      if (nameInput) {
-        return true;
-      } else {
-        console.log("enter email");
+    validate: (input) => {
+      if (!input) {
+        console.log("email address required");
         return false;
       }
+      return true;
     },
   },
 
-  // project inquiries
+  // - application
   {
     type: "input",
     name: "title",
-    message: "enter project title",
-    validate: (nameInput) => {
-      if (nameInput) {
-        return true;
-      } else {
-        console.log("enter project title");
+    message: "enter application name",
+    validate: (input) => {
+      if (!input) {
+        console.log("application name required");
         return false;
       }
+      return true;
     },
   },
   {
@@ -67,15 +65,19 @@ const questions = [
   {
     type: "input",
     name: "description",
-    message: "enter project description",
-    validate: (nameInput) => {
-      if (nameInput) {
-        return true;
-      } else {
-        console.log("enter description");
+    message: "enter application description",
+    validate: (input) => {
+      if (!input) {
+        console.log("application description required");
         return false;
       }
+      return true;
     },
+  },
+  {
+    type: "input",
+    name: "features",
+    message: "enter features of this application",
   },
   {
     type: "checkbox",
@@ -144,7 +146,7 @@ const questions = [
   },
   {
     type: "input",
-    name: "test",
+    name: "usage",
     message: "enter command line to use",
   },
   {
@@ -186,30 +188,4 @@ function writeToFile(fileName, data) {
 }
 
 // Function call to initialize app
-// init();
-
-// testing
-function mockReadMe() {
-  const mockData = {
-    name: "test name",
-    username: "user",
-    email: "user@test.com",
-    title: "test-readme",
-    liveurl: "http://test.com",
-    description: "testing description data",
-    languages: ["Markdown"],
-    // consolidate objects into a credits array
-    // credits: creditsData,
-    frameworks_used: false,
-    libraries_used: false,
-    database_used: false,
-    installation: "npm i",
-    test: "npm run test",
-    usage: "npm run develop",
-    license: "Apache",
-    features: "testing features data"
-  };
-
-  writeToFile("README.md", mockData);
-}
-mockReadMe();
+init();
