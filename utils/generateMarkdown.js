@@ -11,9 +11,11 @@ ${data.description}
 
 ## Table of Contents
 - [Installation](#installation)
-- [Code](#code)
+- [Usage](#usage)
 - [Test](#test)
-- [Screenshots](#screenshots)
+- [Features]
+- [Usage](#usage)
+- [Credits](#credits)
 ${renderLicenseLink(data.license)}
 - [Author](#author)
 
@@ -29,20 +31,24 @@ Run the following command to run tests:
 ${data.test}
 \`\`\`
 
-## Code
+## Usage
+![mobile](./assets/images/small/${data.title}.jpg)
+
+![tablet](./assets/images/medium/${data.title}.jpg)
+
+![desktop](./assets/images/desktop/${data.title}.jpg)
+
+## Credits
 - Languages: ${data.languages.join(", ")}
+### Third-party assets
 ${data.frameworks_used ? `- Frameworks: ${data.frameworks.join(", ")}` : ""}
 ${data.libraries_used ? `- Libraries: ${data.libraries.join(", ")}` : ""}
 ${data.database_used ? `- Database: ${data.database}` : ""}
 
-## Screenshots
-![mobile](./images/small/${data.title}.jpg)
-
-![tablet](./images/medium/${data.title}.jpg)
-
-![desktop](./images/desktop/${data.title}.jpg)
-
 ${renderLicenseSection(data.license)}
+
+## Features
+
 ## Author
 ### ${data.name}
 - [Email](mailto:${data.email})
