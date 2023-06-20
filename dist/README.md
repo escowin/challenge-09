@@ -25,13 +25,13 @@ $ npm i
 ## Test
 Run the following command to run tests:
 ```
-npm run test
+$ npm run test
 ```
 
 ## Usage
 Run the following command to run app:
 ```
-npm start
+$ npm run develop
 ```
 
 ![mobile](./assets/images/small/test-readme.jpg)
@@ -41,7 +41,7 @@ npm start
 ![desktop](./assets/images/large/test-readme.jpg)
 
 ## Features
-undefined
+testing features data
 
 ## Credits
 - Languages: Markdown

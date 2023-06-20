@@ -8,7 +8,7 @@ const questions = [
   {
     type: "input",
     name: "name",
-    message: "enter name",
+    message: "enter your name",
     validate: (nameInput) => {
       if (nameInput) {
         return true;
@@ -135,17 +135,22 @@ const questions = [
   {
     type: "input",
     name: "installation",
-    message: "enter command line installation instructions",
+    message: "enter command line to install",
+  },
+  {
+    type: "input",
+    name: "test",
+    message: "enter command line to test",
+  },
+  {
+    type: "input",
+    name: "test",
+    message: "enter command line to use",
   },
   {
     type: "list",
     name: "license",
     choices: ["Apache", "BSD", "GPL", "LGPL", "MIT", "Microsoft", "None"],
-  },
-  {
-    type: "input",
-    name: "test",
-    message: "enter command line test instructions",
   },
 ];
 
@@ -193,13 +198,16 @@ function mockReadMe() {
     liveurl: "http://test.com",
     description: "testing description data",
     languages: ["Markdown"],
+    // consolidate objects into a credits array
+    // credits: creditsData,
     frameworks_used: false,
     libraries_used: false,
     database_used: false,
     installation: "npm i",
-    usage: "npm run develop",
     test: "npm run test",
+    usage: "npm run develop",
     license: "Apache",
+    features: "testing features data"
   };
 
   writeToFile("README.md", mockData);
