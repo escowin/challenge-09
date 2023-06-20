@@ -1,5 +1,5 @@
 node_modules/
 .DS_Store/
-dist/README.md
+dist/*
 package-lock.json
 mockData.js
