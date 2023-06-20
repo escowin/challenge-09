@@ -2,21 +2,18 @@
 # test-readme
 
 ## Description
-[Repo](https://github.com/user/test-readme)
-* [Live URL](n/a)
-
-testing mock data
+### [Repo](https://github.com/user/test-readme)
+### [Live URL](http://test.com)
+    
+testing description data
 
 ## Table of Contents
 - [Installation](#installation)
-- [Usage](#usage)
 - [Test](#test)
-- [Features]
 - [Usage](#usage)
+- [Features](#features)
 - [Credits](#credits)
-
-* [License](#license)
-
+- [License](#license)
 - [Author](#author)
 
 ## Installation
@@ -32,24 +29,28 @@ npm run test
 ```
 
 ## Usage
+Run the following command to run app:
+```
+npm start
+```
+
 ![mobile](./assets/images/small/test-readme.jpg)
 
 ![tablet](./assets/images/medium/test-readme.jpg)
 
-![desktop](./assets/images/desktop/test-readme.jpg)
+![desktop](./assets/images/large/test-readme.jpg)
+
+## Features
+undefined
 
 ## Credits
 - Languages: Markdown
-### Third-party assets
 
 
 
 
 ## License
-
-    This project is licensed under the [Apache](https://img.shields.io/badge/license-Apache-blue.svg) license.
-
-## Features
+This project is licensed under the [Apache](https://img.shields.io/badge/license-Apache-blue.svg) license.
 
 ## Author
 ### test name
