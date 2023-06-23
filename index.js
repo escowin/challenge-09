@@ -27,6 +27,7 @@ function prompts() {
 // writes README file to dist directory with data plugged into markdown template literal
 function writeToFile(fileName, data) {
   const path = "./dist/";
+  // to do : avoid function calls within functions. reconfigure generateMarkdown call to occur in .then() chain below. 
   fs.writeFile(`${path}${fileName}`, generateMarkdown(data), (err) => {
     if (err) {
       return console.log(err);
@@ -39,4 +40,5 @@ function writeToFile(fileName, data) {
 // call to initialize app
 init()
   .then(prompts)
-  .then((answers) => writeToFile("README.md", answers));
+  .then((answers) => writeToFile("README.md", answers))
+  .catch(err);
