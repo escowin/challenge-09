@@ -7,8 +7,8 @@ const { questions } = require("./lib/questions");
 // runs welcome screen & inquirer prompts. the answers object is then passed as an argument for writeToFile.
 function init() {
   let date = new Date().getFullYear();
-
-  console.log(`
+  return Promise.resolve(
+    console.log(`
 ·················································
 ·                                               ·
 ·              readme-generator v1.6            ·
@@ -16,11 +16,12 @@ function init() {
 ·  https://github.com/escowin/readme-generator  ·
 ·                                               ·
 ·················································
-`);
+`)
+  );
+}
 
-  inquirer
-    .prompt(questions)
-    .then((answers) => writeToFile("README.md", answers));
+function prompts() {
+  return inquirer.prompt(questions);
 }
 
 // writes README file to dist directory with data plugged into markdown template literal
@@ -36,4 +37,6 @@ function writeToFile(fileName, data) {
 }
 
 // call to initialize app
-init();
+init()
+  .then(prompts)
+  .then((answers) => writeToFile("README.md", answers));
