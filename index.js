@@ -41,4 +41,4 @@ function writeToFile(fileName, data) {
 init()
   .then(prompts)
   .then((answers) => writeToFile("README.md", answers))
-  .catch(err);
+  .catch(err => console.log(err));
