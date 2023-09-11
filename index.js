@@ -3,6 +3,7 @@ const fs = require("fs");
 const inquirer = require("inquirer");
 const generateMarkdown = require("./utils/generateMarkdown");
 const { questions } = require("./lib/questions");
+const { mockReadMe } = require("./lib/mockData")
 
 // runs welcome screen & inquirer prompts. the answers object is then passed as an argument for writeToFile.
 function init() {
@@ -40,5 +41,6 @@ function writeToFile(fileName, data) {
 // call to initialize app
 init()
   .then(prompts)
-  .then((answers) => writeToFile("README.md", answers))
+  // .then((answers) => writeToFile("README.md", answers))
+  .then(() => writeToFile("README.md", mockReadMe))
   .catch(err => console.log(err));

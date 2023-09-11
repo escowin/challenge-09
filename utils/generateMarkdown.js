@@ -4,8 +4,7 @@ function generateMarkdown(data) {
 # ${data.title}
 
 ## Description
-### [Repo](https://github.com/${data.username}/${data.title})
-${renderLiveUrl(data.liveurl)}
+[Repo](https://github.com/${data.username}/${data.title}) ${renderLiveUrl(data.liveurl)}
 ${data.description}
 
 ## Table of Contents
@@ -62,28 +61,23 @@ ${renderLicenseSection(data.license)}
 // render sections
 // - title
 function renderLiveUrl(liveurl) {
-  if (liveurl !== "") {
-    return `### [Live URL](${liveurl})
-    `;
-  }
-  return "";
+  return (liveurl !== "") ? `| [Live URL](${liveurl})` : ""
 }
 
 // - table of contents
 function renderLicenseLink(license) {
-  if (license !== "None") {
-    return `- [License](#license)`;
-  }
-  return "";
+  return (license !== "None") ?  `- [License](#license)`: "";
 }
 
 // - license
 function renderLicenseSection(license) {
-  if (license !== "None") {
-    return `## License
-This project is licensed under the [${license}](https://img.shields.io/badge/license-${license}-blue.svg) license.`;
-  }
-  return "";
+  return (license !== "None") ? `## License
+This project is licensed under the [${license}](https://img.shields.io/badge/license-${license}-blue.svg) license.`
+  : ""
 }
 
-module.exports = generateMarkdown;
+function renderDetail(detail) {
+  return detail ? detail : ""
+}
+
+module.exports = {generateMarkdown, renderDetail};

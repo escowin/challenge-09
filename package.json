@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "edwin escobar",
   "license": "ISC",
@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/escowin/challenge-09/issues"
   },
-  "homepage": "https://github.com/escowin/challenge-09#readme"
+  "homepage": "https://github.com/escowin/challenge-09#readme",
+  "devDependencies": {
+    "jest": "^29.6.4"
+  }
 }
