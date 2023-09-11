@@ -76,8 +76,21 @@ This project is licensed under the [${license}](https://img.shields.io/badge/lic
   : ""
 }
 
-function renderDetail(detail) {
-  return detail ? detail : ""
+function renderDetail(value, key) {
+  if (!value || !key) {
+    console.error("missing parameters")
+    return ""
+  }
+
+  let template = ""
+  switch (key) {
+    case "liveurl":
+      template = `| [Live URL](${value})`
+      break;
+    default:
+      template = ""
+  }
+  return template
 }
 
 module.exports = {generateMarkdown, renderDetail};
