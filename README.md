@@ -2,15 +2,17 @@
 # readme-generator
 
 ## Description
-[Repo](https://github.com/escowin/readme-generator)
+[Repo](https://github.com/escowin/readme-generator) 
 
-generates readme files via command line prompts
+This application captures user input through the terminal, and generates a data-rich `README.md` in Markdown format. Template literal functions were improved & consolidated through Test-Driven Development principles. Furthermore, the incorporation of \n was crucial in removing any instances of undesirable whitespace from the generated output codebase.
 
 ## Table of Contents
 - [Installation](#installation)
-- [Code](#code)
 - [Test](#test)
-- [Screenshots](#screenshots)
+- [Usage](#usage)
+- [Features](#features)
+- [Credits](#credits)
+- [License](#license)
 - [Author](#author)
 
 ## Installation
@@ -19,21 +21,32 @@ Run the following command to install necessary dependencies:
 $ npm i
 ```
 
-## Code
-- Languages: Javascript
-- Frameworks: Node
-- Libraries: inquirer
-
 ## Test
 Run the following command to run tests:
 ```
-n/a
+$ npm run test
 ```
 
-## Screenshots
-![screenshot](./images/readme-generator.jpg)
+## Usage
+Run the following command to run app:
+```
+$ npm start
+```
+
+![input](./assets/img/input.jpg)
+
+![output](./assets/img/output.jpg)
+
+
+## Features
+- Dynamically formats template literal
+
+## Credits
+- Languages: Javascript
+- Frameworks: Node, Jest
+- Libraries: inquirer
 
 ## Author
-###  Edwin M. Escobar
-- [GitHub](https://github.com/escowin)
+### Edwin Escobar
 - [Email](mailto:edwin@escowinart.com)
+- [GitHub](https://github.com/escowin)

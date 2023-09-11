@@ -1,7 +1,7 @@
 {
   "name": "readme-generator",
-  "version": "1.6.0",
-  "description": "generates a readme.md from the cli",
+  "version": "1.6.1",
+  "description": "captures user input through the terminal, and outputs a stylized & data-rich markdown file",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",

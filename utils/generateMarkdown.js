@@ -1,10 +1,13 @@
 function generateMarkdown(data) {
-  // markdown template literal
   return `
 # ${data.title}
 
 ## Description
-[Repo](https://github.com/${data.username}/${data.title}) ${renderLiveUrl(data.liveurl)}
+[Repo](https://github.com/${data.username}/${data.title}) ${renderDetail(
+    data.liveurl,
+    "liveurl"
+  )}
+
 ${data.description}
 
 ## Table of Contents
@@ -12,8 +15,7 @@ ${data.description}
 - [Test](#test)
 - [Usage](#usage)
 - [Features](#features)
-- [Credits](#credits)
-${renderLicenseLink(data.license)}
+- [Credits](#credits)${renderDetail(data.license, "licenseLink")}
 - [Author](#author)
 
 ## Installation
@@ -34,23 +36,21 @@ Run the following command to run app:
 $ ${data.usage}
 \`\`\`
 
-![mobile](./assets/images/small/${data.title}.jpg)
+![mobile](./assets/img/${data.title}-sm.jpg)
 
-![tablet](./assets/images/medium/${data.title}.jpg)
+![tablet](./assets/img/${data.title}-md.jpg)
 
-![desktop](./assets/images/large/${data.title}.jpg)
+![desktop](./assets/img/${data.title}-lg.jpg)
 
 ## Features
 ${data.features}
 
 ## Credits
 - Languages: ${data.languages.join(", ")}
-${data.frameworks_used ? `- Frameworks: ${data.frameworks.join(", ")}` : ""}
-${data.libraries_used ? `- Libraries: ${data.libraries.join(", ")}` : ""}
-${data.database_used ? `- Database: ${data.database}` : ""}
-
-${renderLicenseSection(data.license)}
-
+${data.frameworks_used ? renderDetail(data.frameworks, "frameworks") : ""}
+${data.libraries_used ? renderDetail(data.libraries, "libraries") : ""}
+${data.database_used ? renderDetail(data.database, "database") : ""}
+${renderDetail(data.license, "license")}
 ## Author
 ### ${data.name}
 - [Email](mailto:${data.email})
@@ -58,39 +58,36 @@ ${renderLicenseSection(data.license)}
 `;
 }
 
-// render sections
-// - title
-function renderLiveUrl(liveurl) {
-  return (liveurl !== "") ? `| [Live URL](${liveurl})` : ""
-}
-
-// - table of contents
-function renderLicenseLink(license) {
-  return (license !== "None") ?  `- [License](#license)`: "";
-}
-
-// - license
-function renderLicenseSection(license) {
-  return (license !== "None") ? `## License
-This project is licensed under the [${license}](https://img.shields.io/badge/license-${license}-blue.svg) license.`
-  : ""
-}
-
+// render details
 function renderDetail(value, key) {
-  if (!value || !key) {
-    console.error("missing parameters")
-    return ""
+  let template = "";
+
+  if (!value || !key || value === "None") {
+    return template;
   }
 
-  let template = ""
   switch (key) {
+    case "database":
+      template = `- Database: ${value}`;
+    case "libraries":
+      template = `- Libraries: ${value.join(", ")}`;
+      break;
+    case "frameworks":
+      template = `- Frameworks: ${value.join(", ")}`;
+      break;
+    case "license":
+      template = `\n## License\nThis project is licensed under the [${value}](https://img.shields.io/badge/license-${value}-blue.svg) license.\n`;
+      break;
+    case "licenseLink":
+      template = `\n- [License](#license)`;
+      break;
     case "liveurl":
-      template = `| [Live URL](${value})`
+      template = `| [Live URL](${value})`;
       break;
     default:
-      template = ""
+      template = "";
   }
-  return template
+  return template;
 }
 
-module.exports = {generateMarkdown, renderDetail};
+module.exports = { generateMarkdown, renderDetail };
