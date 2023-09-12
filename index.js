@@ -2,6 +2,7 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
 const { generateMarkdown } = require("./utils/generateMarkdown");
+const { version } = require("./package.json");
 const { prompts } = require("./lib/questions");
 const { mockData } = require("./lib/mockData");
 
@@ -11,7 +12,7 @@ function init() {
   return Promise.resolve(
     console.log(`·················································
 ·                                               ·
-·              readme-generator v1.6.1          ·
+·            readme-generator v${version}            ·
 ·            © ${date} edwin m. escobar            ·
 ·  https://github.com/escowin/readme-generator  ·
 ·                                               ·
@@ -21,15 +22,16 @@ function init() {
 }
 
 function userPrompts() {
-  console.log(`\n·  USER DETAILS                                 ·\n`)
+  console.log(`\n·  USER DETAILS                                 ·\n`);
   return inquirer.prompt(prompts.user);
 }
 
 function appPrompts(userData) {
-  // let data = userData;
-  // console.log(data);
-  console.log(`\n·  APP DETAILS                                  ·\n`)
-  inquirer.prompt(prompts.app).then(answers => console.log(answers));
+  console.log(`\n·  APP DETAILS                                  ·\n`);
+  return inquirer.prompt(prompts.app).then((answers) => {
+    const data = { user: userData, app: answers }
+    return data
+  });
 }
 
 // writes README file to dist directory with data plugged into markdown template literal
@@ -44,6 +46,6 @@ function writeToFile(fileName, data) {
 init()
   // .then(userPrompts)
   // .then(appPrompts)
-  .then(() => appPrompts(mockData))
+  .then(() => writeToFile("README.md", mockData))
   // .then((answers) => writeToFile("README.md", answers))
   .catch((err) => console.log(err));

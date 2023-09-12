@@ -1,60 +1,61 @@
 function generateMarkdown(data) {
+  const { user, app } = data
   return `
-# ${data.title}
+# ${app.title}
 
 ## Description
-[Repo](https://github.com/${data.username}/${data.title}) ${renderDetail(
-    data.liveurl,
+[Repo](https://github.com/${user.username}/${app.title}) ${renderDetail(
+  app.liveurl,
     "liveurl"
   )}
 
-${data.description}
+${app.description}
 
 ## Table of Contents
 - [Installation](#installation)
 - [Test](#test)
 - [Usage](#usage)
 - [Features](#features)
-- [Credits](#credits)${renderDetail(data.license, "licenseLink")}
+- [Credits](#credits)${renderDetail(app.license, "licenseLink")}
 - [Author](#author)
 
 ## Installation
 Run the following command to install necessary dependencies:
 \`\`\`
-$ ${data.installation}
+$ ${app.installation}
 \`\`\`
 
 ## Test
 Run the following command to run tests:
 \`\`\`
-$ ${data.test}
+$ ${app.test}
 \`\`\`
 
 ## Usage
 Run the following command to run app:
 \`\`\`
-$ ${data.usage}
+$ ${app.usage}
 \`\`\`
 
-![mobile](./assets/img/${data.title}-sm.jpg)
+![mobile](./assets/img/${app.title}-sm.jpg)
 
-![tablet](./assets/img/${data.title}-md.jpg)
+![tablet](./assets/img/${app.title}-md.jpg)
 
-![desktop](./assets/img/${data.title}-lg.jpg)
+![desktop](./assets/img/${app.title}-lg.jpg)
 
 ## Features
-${data.features}
+${app.features}
 
 ## Credits
-- Languages: ${data.languages.join(", ")}
-${data.frameworks_used ? renderDetail(data.frameworks, "frameworks") : ""}
-${data.libraries_used ? renderDetail(data.libraries, "libraries") : ""}
-${data.database_used ? renderDetail(data.database, "database") : ""}
-${renderDetail(data.license, "license")}
+- Languages: ${app.languages.join(", ")}
+${app.frameworks_used ? renderDetail(app.frameworks, "frameworks") : ""}
+${app.libraries_used ? renderDetail(app.libraries, "libraries") : ""}
+${app.database_used ? renderDetail(app.database, "database") : ""}
+${renderDetail(app.license, "license")}
 ## Author
-### ${data.name}
-- [Email](mailto:${data.email})
-- [GitHub](https://github.com/${data.username})
+### ${user.name}
+- [Email](mailto:${user.email})
+- [GitHub](https://github.com/${user.username})
 `;
 }
 
