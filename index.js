@@ -1,8 +1,9 @@
 // packages needed for this application
 const fs = require("fs");
 const inquirer = require("inquirer");
-const {generateMarkdown} = require("./utils/generateMarkdown");
-const { questions } = require("./lib/questions");
+const { generateMarkdown } = require("./utils/generateMarkdown");
+const { prompts } = require("./lib/questions");
+const { mockData } = require("./lib/mockData");
 
 // runs welcome screen & inquirer prompts. the answers object is then passed as an argument for writeToFile.
 function init() {
@@ -19,20 +20,30 @@ function init() {
   );
 }
 
-function prompts() {
-  return inquirer.prompt(questions);
+function userPrompts() {
+  console.log(`\n·  USER DETAILS                                 ·\n`)
+  return inquirer.prompt(prompts.user);
+}
+
+function appPrompts(userData) {
+  // let data = userData;
+  // console.log(data);
+  console.log(`\n·  APP DETAILS                                  ·\n`)
+  inquirer.prompt(prompts.app).then(answers => console.log(answers));
 }
 
 // writes README file to dist directory with data plugged into markdown template literal
 function writeToFile(fileName, data) {
   const path = "./dist/";
   fs.writeFile(`${path}${fileName}`, generateMarkdown(data), (err) => {
-    err ? console.error(err) : console.log(`wrote file to ${path}${fileName}`)
+    err ? console.error(err) : console.log(`wrote file to ${path}${fileName}`);
   });
 }
 
 // call to initialize app
 init()
-  .then(prompts)
-  .then((answers) => writeToFile("README.md", answers))
-  .catch(err => console.log(err));
+  // .then(userPrompts)
+  // .then(appPrompts)
+  .then(() => appPrompts(mockData))
+  // .then((answers) => writeToFile("README.md", answers))
+  .catch((err) => console.log(err));
