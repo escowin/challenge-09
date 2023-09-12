@@ -1,3 +1,3 @@
-const validate = (input) => input ? true : (console.log("required"), false)
+const validate = (input, string) => input ? true : (console.log(`${string} required`), false)
 
 module.exports = { validate }
