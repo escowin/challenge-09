@@ -1,7 +1,7 @@
 function generateMarkdown(data) {
   const { user, app } = data
-  return `
-# ${app.title}
+  console.log(app)
+  return `# ${app.title}
 
 ## Description
 [Repo](https://github.com/${user.username}/${app.title}) ${renderDetail(
@@ -61,6 +61,7 @@ ${renderDetail(app.license, "license")}
 
 // render details
 function renderDetail(value, key) {
+  console.log(value)
   let template = "";
 
   if (!value || !key || value === "None") {
@@ -70,6 +71,7 @@ function renderDetail(value, key) {
   switch (key) {
     case "database":
       template = `- Database: ${value}`;
+      break;
     case "libraries":
       template = `- Libraries: ${value.join(", ")}`;
       break;

@@ -4,7 +4,6 @@ const inquirer = require("inquirer");
 const { generateMarkdown } = require("./utils/generateMarkdown");
 const { version } = require("./package.json");
 const { prompts } = require("./lib/questions");
-const { mockData } = require("./lib/mockData");
 
 // runs welcome screen & inquirer prompts. the answers object is then passed as an argument for writeToFile.
 function init() {
@@ -44,8 +43,7 @@ function writeToFile(fileName, data) {
 
 // call to initialize app
 init()
-  // .then(userPrompts)
-  // .then(appPrompts)
-  .then(() => writeToFile("README.md", mockData))
-  // .then((answers) => writeToFile("README.md", answers))
-  .catch((err) => console.log(err));
+  .then(userPrompts)
+  .then(appPrompts)
+  .then((answers) => writeToFile("README.md", answers))
+  .catch((err) => console.error(err));
